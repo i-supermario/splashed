@@ -67,3 +67,5 @@ router.get("/get/:id",async (req,res)=>{
         console.log(error.message)
     }
 })
+
+module.exports = router
