@@ -25,7 +25,12 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors())
 app.use(express.json());
+app.get("/",(req,res)=>{
+    res.send({Message:"Working Vercel App"})
+})
 app.use("/api",routes)
 app.listen(3000, () => {
     console.log(`Server Started at ${3000}`)
 })
+
+module.exports = app
