@@ -6,11 +6,6 @@ const Model = require("../models/model")
 
 
 // Post
-
-router.get("/",(req,res)=>{
-    res.send("Working API")
-})
-
 router.post('/post', async (req,res)=>{
     console.log("POSTING")
     console.log(req.body)
@@ -27,6 +22,11 @@ router.post('/post', async (req,res)=>{
         res.status(400).json({message: error})        
 
     }
+})
+
+
+router.get("/",(req,res)=>{
+    res.send("Working API")
 })
 
 router.delete('/delete/:id',async (req,res)=>{

@@ -6,9 +6,7 @@ const cors = require("cors")
 const mongoString = process.env.DATABASE_URL;
 const bodyParser = require("body-parser")
 
-const routes = require("./api/routes")
-
-
+const routes = require("./routes/routes")
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
@@ -28,7 +26,7 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.send({Message:"Working Vercel App"})
 })
-app.use("/api",routes)
+app.use("/app",routes)
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Server Started`)
 })
