@@ -30,7 +30,7 @@ app.get("/",(req,res)=>{
 })
 app.use("/api",routes)
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server Started at ${3000}`)
+    console.log(`Server Started`)
 })
     
 
