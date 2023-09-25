@@ -19,7 +19,7 @@ function Searchbar(){
         <>
             <Container sx={{display:'flex',columnGap:'10px',borderRadius:'10px',width:'250px',border:'1px solid gray',height:'40px',margin:'0'}}>
                     <img alt="search-icon" src={Logo} style={{width:'20px',height:'20px',marginTop:'10px'}}/>
-                    <TextField variant="standard" sx={{marginTop:'4px'}} InputProps={{ disableUnderline: true }} placeholder="Search by name" 
+                    <TextField variant="standard" sx={{marginTop:'4px',"::placeholder":'black'}} InputProps={{ disableUnderline: true }} placeholder="Search by name" 
                     value={context.search.text} 
                     onChange={async (evt)=>{
                         await context.search.setText(evt.target.value)

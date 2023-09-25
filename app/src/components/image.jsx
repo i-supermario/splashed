@@ -24,11 +24,11 @@ function Image(props){
         <>
             {/* <Card sx={{borderRadius:'15px'}} > */}
               <Container
-                onMouseEnter={()=>{
+                onMouseOver={()=>{
                   setView('block');
                   setBrightness('brightness(30%)')
                 }}
-                onMouseLeave={()=>{
+                onMouseOut={()=>{
                   setView('none');
                   setBrightness('brightness(100%)')
                 }} 

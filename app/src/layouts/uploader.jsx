@@ -14,7 +14,7 @@ function Uploader(props){
         console.log("uploading")
         context.upload.setView('none');
         context.setOverlayView('')
-        fetch('http://localhost:3000/api/post', {
+        fetch('http://localhost:3001/app/post', {
             Accept: 'application/json',
             method: 'post',
             mode: 'cors',
@@ -57,13 +57,13 @@ function Uploader(props){
                     <Typography variant="caption" sx={{fontWeight:'600',fontSize:'15px'}}>
                         Label
                     </Typography>
-                    <TextField variant="outlined" size="small" sx={{width:'450px'}} InputProps={{ disableUnderline: true }} placeholder="add a label" value={tfLabel} onChange={(evt)=>{setTfLabel(evt.target.value)}}/>
+                    <TextField variant="outlined" size="small" sx={{width:'450px'}} placeholder="add a label" value={tfLabel} onChange={(evt)=>{setTfLabel(evt.target.value)}}/>
                 </Container>
                 <Container disableGutters sx={{display:'flex',flexDirection:'column'}}>
                     <Typography variant="caption" sx={{fontWeight:'600',fontSize:'15px'}}>
                         Photo URL
                     </Typography>
-                    <TextField variant="outlined" size="small" sx={{width:'450px'}} InputProps={{ disableUnderline: true }} placeholder="add URL" value={tfURL} onChange={(evt)=>{setTfURL(evt.target.value)}} />
+                    <TextField variant="outlined" size="small" sx={{width:'450px'}} placeholder="add URL" value={tfURL} onChange={(evt)=>{setTfURL(evt.target.value)}} />
                 </Container>
                 <Container disableGutters sx={{display:'flex',justifyContent:'flex-end',columnGap:'10px'}}>
                     <Button onClick={()=>{

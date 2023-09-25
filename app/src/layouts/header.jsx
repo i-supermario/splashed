@@ -16,12 +16,12 @@ function Header(){
                 paddingBottom:'0px',
                 }}>
                 <Container disableGutters sx={{display:'flex',paddingLeft:'0',paddingRight:'0'}}>
-                    <img alt="person-logo" src={PersonLogo} style={{height:'40px',width:'40px'}}></img>
+                    {/* <img alt="person-logo" src={PersonLogo} style={{height:'40px',width:'40px'}}></img> */}
                     <Container sx={{display:'flex',flexDirection:'column',width:'200px',margin:'0'}}>
                         <Typography variant="h5">
-                            Splashed
+                            meme collector
                         </Typography>
-                        <Link href="https://devchallenges.io/">devchallenges.io</Link>
+                        {/* <Link href="https://devchallenges.io/">devchallenges.io</Link> */}
                     </Container>
                     <Searchbar/>
                 </Container>

@@ -5,7 +5,6 @@ import Header from "../layouts/header";
 import Delete from "../layouts/delete";
 import Uploader from "../layouts/uploader";
 import Image from "../components/image";
-import { Grid } from "@mui/material";
 import { createContext, useEffect, useState } from "react";
 
 const theme = createTheme({
@@ -46,7 +45,7 @@ function App() {
   const [searchText,setSearchText] = useState('')
 
   async function fetchData(){
-    await fetch("http://localhost:3000/api/getAll")
+    await fetch("http://localhost:3001/app/getAll")
     .then(res=>res.json())
     .then(currdata=>{
         const images = []
@@ -56,7 +55,7 @@ function App() {
           .filter(o => o.label.toLowerCase().includes(searchText)))
           .forEach((image)=>{
             images.push(
-                <Container disableGutters key={image._id} item sx={{textAlign:'center',padding:'0'}}>
+                <Container disableGutters key={image._id} sx={{textAlign:'center',padding:'0'}}>
                     <Image src={image.url} label={image.label} id={image._id}/>
                 </Container>
             )
@@ -96,13 +95,15 @@ function App() {
       <Context.Provider value={context}>
         <ThemeProvider theme={theme}>
           <Container className={overlay} maxWidth={false} disableGutters sx={{
+            minHeight:'100vh',
             display:'flex',
-            justifyContent:'center',
+            justifyContent:'start',
             alignContent:'center',
             flexDirection:'column',
             padding:'10px 200px 10px 200px',
             rowGap:'50px',
             fontFamily:'Rockwell',
+            backgroundColor:"lightgray"
             }} >
             <Header/>
             <MasonryLayout images={imageList}/>

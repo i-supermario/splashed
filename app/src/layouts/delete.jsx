@@ -11,12 +11,12 @@ function Delete(props){
     const [passwordWrong,showPasswordWrong] = useState('none')
 
     async function handleClick(){
-        console.log(PASSWORD)
-        console.log(password)
+        // console.log(PASSWORD)
+        // console.log(password)
         console.log("handle delete")
         if(PASSWORD===password){
             showPasswordWrong('none')
-                await fetch(`http://localhost:3000/api/delete/${props.deleteId}`,
+                await fetch(`http://localhost:3001/app/delete/${props.deleteId}`,
                 {
                     method:"DELETE"
                 }
@@ -66,7 +66,7 @@ function Delete(props){
                     <Typography variant="caption" sx={{fontWeight:'600',fontSize:'15px'}}>
                         Password
                     </Typography>
-                    <TextField value={password} type="password" variant="outlined" size="small" sx={{width:'450px'}} InputProps={{ disableUnderline: true }} placeholder="enter password" onChange={(evt)=>{setPassword(evt.target.value)}}/>
+                    <TextField value={password} type="password" variant="outlined" size="small" sx={{width:'450px'}} placeholder="enter password" onChange={(evt)=>{setPassword(evt.target.value)}}/>
                 </Container>
                 <Container disableGutters sx={{display:'flex',justifyContent:'flex-end',columnGap:'10px'}}>
                     <Button onClick={()=>{
