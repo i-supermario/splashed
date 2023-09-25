@@ -2,7 +2,7 @@ import { Button, Container, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import { Context } from "../pages/App";
-const PASSWORD = "bruh"
+// const PASSWORD = "bruh"
 
 function Delete(props){
 
@@ -14,9 +14,9 @@ function Delete(props){
         // console.log(PASSWORD)
         // console.log(password)
         console.log("handle delete")
-        if(PASSWORD===password){
+        // if(PASSWORD===password){
             showPasswordWrong('none')
-                await fetch(`http://localhost:3001/app/delete/${props.deleteId}`,
+                await fetch(`http://localhost:3001/app/delete/${props.deleteId}?pass=${password}`,
                 {
                     method:"DELETE"
                 }
@@ -29,12 +29,13 @@ function Delete(props){
             })
             .catch((error)=>{
                 console.log(error)
+                showPasswordWrong('block')
             })
-        }
-        else{
-            console.log("Wrong Password")
-            showPasswordWrong('block')
-        }
+        // }
+        // else{
+        //     console.log("Wrong Password")
+        //     showPasswordWrong('block')
+        // }
         setPassword('')
 
     }

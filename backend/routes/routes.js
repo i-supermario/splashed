@@ -32,8 +32,17 @@ router.get("/",(req,res)=>{
 router.delete('/delete/:id',async (req,res)=>{
     try{
         const id = req.params.id
-        const data = await Model.findByIdAndDelete(id)
-        res.send(`Document with ${data.label} is deleted`)
+        const pass = req.query.pass
+        console.log(req)
+        console.log(pass)
+        console.log(process.env.PASSWORD)
+        if(pass == process.env.PASSWORD){
+            const data = await Model.findByIdAndDelete(id)
+            res.send(`Document with ${data.label} is deleted`)
+        }
+        else{
+            res.status(400).send("Wrong password")
+        }
     }
     catch(error){
         console.log(error.message)
