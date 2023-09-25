@@ -16,7 +16,7 @@ function Delete(props){
         console.log("handle delete")
         // if(PASSWORD===password){
             showPasswordWrong('none')
-                await fetch(`http://localhost:3001/app/delete/${props.deleteId}?pass=${password}`,
+                await fetch(`https://meme-collector-backend.onrender.com/app/delete/${props.deleteId}?pass=${password}`,
                 {
                     method:"DELETE"
                 }

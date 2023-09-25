@@ -1,4 +1,4 @@
-import { Button, Container, TextField, Typography, useStepContext } from "@mui/material";
+import { Button, Container, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import { Context } from "../pages/App";
@@ -14,7 +14,7 @@ function Uploader(props){
         console.log("uploading")
         context.upload.setView('none');
         context.setOverlayView('')
-        fetch('http://localhost:3001/app/post', {
+        fetch('https://meme-collector-backend.onrender.com/app/post', {
             Accept: 'application/json',
             method: 'post',
             mode: 'cors',

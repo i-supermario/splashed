@@ -1,6 +1,5 @@
-import { Button, Container, Link, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import { useContext } from "react";
-import PersonLogo from "../assets/personLogo.svg"
 import Searchbar from "../components/searchbar";
 import { Context } from "../pages/App";
 

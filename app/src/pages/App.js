@@ -45,7 +45,7 @@ function App() {
   const [searchText,setSearchText] = useState('')
 
   async function fetchData(){
-    await fetch("http://localhost:3001/app/getAll")
+    await fetch("https://meme-collector-backend.onrender.com/app/getAll")
     .then(res=>res.json())
     .then(currdata=>{
         const images = []
